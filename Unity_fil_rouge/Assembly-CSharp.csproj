@@ -46,14 +46,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BoutonMenu.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
+     <Compile Include="Assets\Scripts\Case.cs" />
+     <Compile Include="Assets\Scripts\DeplacementCamera.cs" />
      <Compile Include="Assets\Scripts\Gameplay.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\JourNuit.cs" />
+     <Compile Include="Assets\Scripts\Texture.cs" />
+     <Compile Include="Assets\Scripts\ZoomCamera.cs" />
      <Compile Include="Assets\Scripts\game-building\Drilling.cs" />
      <Compile Include="Assets\Scripts\game-building\Greenhouse.cs" />
      <Compile Include="Assets\Scripts\game-building\Habitation.cs" />
      <Compile Include="Assets\Scripts\game-building\SolarPanel.cs" />
      <Compile Include="Assets\Scripts\game-building\Spaceship.cs" />
      <Compile Include="Assets\Scripts\game-building\WindTurbine.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
