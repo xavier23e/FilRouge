@@ -11,8 +11,7 @@ public class Case : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		item = GameObject.Find ("drilling");
-		Debug.Log ("item=" + item.name);
+		item = GameObject.Find ("habitation");
 		actifCase = true;
 		shader = Shader.Find("Diffuse");
 	}
