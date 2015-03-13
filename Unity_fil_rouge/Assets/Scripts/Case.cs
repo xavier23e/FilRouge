@@ -5,15 +5,16 @@ public class Case : MonoBehaviour {
 
 	private GameObject item;
 	//[HideInInspector]
-	public bool actif;
-	private bool placed;
+	public bool actifCase;
+	private static bool itemPlaced = false;
+	private Shader shader;
 
 	// Use this for initialization
 	void Awake () {
-		item = GameObject.Find ("Item");
+		item = GameObject.Find ("drilling");
 		Debug.Log ("item=" + item.name);
-		actif = true;
-		placed = false;
+		actifCase = true;
+		shader = Shader.Find("Diffuse");
 	}
 	
 	// Update is called once per frame
@@ -23,20 +24,17 @@ public class Case : MonoBehaviour {
 
 	// Au survol de la souris
 	void OnMouseOver() {
-		if (actif && !placed) {
-			//renderer.material.color = Color.red;
+		if (actifCase && !itemPlaced) {
+			// Déplacement de l'item sur la case
 			item.transform.position = transform.position;
 		}
 	}
 
-	void OnMouseExit() {
-		if (actif) {
-			renderer.material.color = Color.white;
-		}
-	}
-
 	void OnMouseDown () {
-		placed = true;
-		Debug.Log ("Item placed");
+		itemPlaced = true;
+		Debug.Log ("Item placé :" + itemPlaced);
+
+		// Changement du shader (transparent à diffusé)
+		//item.GetComponent<Renderer> ().material.shader = shader;
 	}
 }
