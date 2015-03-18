@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: e6de3bd8c3098f245b9cb829dbc2a25f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - solar: {fileID: 100056, guid: 956b725fec3126e44a36a2bfccac5648, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

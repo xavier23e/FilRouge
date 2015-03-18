@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class boutonIG : MonoBehaviour {
-	public Texture spriteDrilling;
-	public Texture spriteSolar;
+	public GameObject btnMenu;
 	// Use this for initialization
 	void Start () {
 
@@ -11,7 +11,10 @@ public class boutonIG : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
-	
+
+	void OnMouseDown() {
+		Debug.Log ("ici");
+	}
 }

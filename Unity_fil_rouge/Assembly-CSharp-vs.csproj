@@ -62,6 +62,12 @@
      <Compile Include="Assets\Scripts\game-building\Spaceship.cs" />
      <Compile Include="Assets\Scripts\game-building\WindTurbine.cs" />
      <Compile Include="Assets\Scripts\put_building\Case.cs" />
+     <Compile Include="Assets\Scripts\put_building\ClickCreation.cs" />
+     <Compile Include="Assets\Scripts\put_building\CreateDrilling.cs" />
+     <Compile Include="Assets\Scripts\put_building\CreateGreenHouse.cs" />
+     <Compile Include="Assets\Scripts\put_building\CreateHouse.cs" />
+     <Compile Include="Assets\Scripts\put_building\CreateSolar.cs" />
+     <Compile Include="Assets\Scripts\put_building\CreateWind.cs" />
      <Compile Include="Assets\Scripts\put_building\GameGridClass.cs" />
      <Compile Include="Assets\Scripts\put_building\Item.cs" />
      <Compile Include="Assets\Scripts\put_building\Texture.cs" />

@@ -3,15 +3,13 @@ using System.Collections;
 
 public class Case : MonoBehaviour {
 
-	private GameObject item;
+	public GameObject item = null;
 	//[HideInInspector]
 	public bool actifCase;
-	private static bool itemPlaced = false;
+	public static bool itemPlaced = false;
 	private Shader shader;
-
 	// Use this for initialization
 	void Awake () {
-		item = GameObject.Find ("habitation");
 		actifCase = true;
 		shader = Shader.Find("Diffuse");
 	}
@@ -32,8 +30,8 @@ public class Case : MonoBehaviour {
 	void OnMouseDown () {
 		itemPlaced = true;
 		Debug.Log ("Item placé :" + itemPlaced);
-
 		// Changement du shader (transparent à diffusé)
 		//item.GetComponent<Renderer> ().material.shader = shader;
 	}
+
 }

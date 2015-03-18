@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\boutonIG.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\put_building\CreateSolar.cs">
     <Files>
-      <File FileName="Assets\Scripts\boutonIG.cs" Line="17" Column="1" />
+      <File FileName="Assets\Scripts\Main.cs" Line="45" Column="16" />
+      <File FileName="Assets\Scripts\put_building\CreateDrilling.cs" Line="15" Column="20" />
+      <File FileName="Assets\Scripts\put_building\Case.cs" Line="9" Column="40" />
+      <File FileName="Assets\Scripts\put_building\CreateSolar.cs" Line="18" Column="51" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
