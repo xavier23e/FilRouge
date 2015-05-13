@@ -64,4 +64,17 @@ public class Gameplay : MonoBehaviour {
 
 		}
 	}
+
+	// Vérifier les ressouces pour poser un batiment
+	public bool verifRessources(int res_water, int res_food, int res_energy,int res_humain){
+		
+		if (res_water <= this.water 
+		    && res_food <= this.food
+		    && res_energy <= this.energy
+		    && res_humain <= this.humain) {
+			return true;
+		} 
+		return false;
+	}
+
 }
