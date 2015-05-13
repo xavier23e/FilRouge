@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Main : MonoBehaviour {
 
+	//Tableau de la grille de jeu
+	public static ArrayList tabMapBuild = new ArrayList();
+	
 	// Objet grille de jeu
 	private GameGridClass gameGrid;
 
@@ -43,6 +46,8 @@ public class Main : MonoBehaviour {
 					caseObject.GetComponent<Case>().item = new GameObject();
 					caseObject.transform.localPosition = new Vector3(x,0f,z);
 					caseObject.renderer.material.color = new Color(caseObject.renderer.material.color.r, caseObject.renderer.material.color.g, caseObject.renderer.material.color.b, 0.5f);
+					//On cache ici la grille
+					caseObject.renderer.enabled = false;
 					nbCase++;
 					z++;
 					//Debug.Log("x = "+x+" z = "+z);
@@ -50,10 +55,5 @@ public class Main : MonoBehaviour {
 				x++;
 			}			
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-
-	}
 }

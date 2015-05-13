@@ -6,7 +6,7 @@ public class Greenhouse : Building {
 	private int buildingLevel = 1;
 
 	//Données Consommation / Production
-	public Greenhouse(){
+	public Greenhouse(Case pCase){
 		c_humain = 5;
 		c_food = 0;
 		c_energy = 20;
@@ -16,6 +16,8 @@ public class Greenhouse : Building {
 		p_food = 60;
 		p_energy = 0; 
 		p_water = 0;
+		this.caseScript = pCase;
+
 	}
 	// Use this for initialization
 	void Start () {

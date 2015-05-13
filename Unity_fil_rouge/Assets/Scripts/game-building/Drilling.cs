@@ -6,7 +6,7 @@ public class Drilling : Building {
 	private int buildingLevel = 1;
 
 	//Ressources object
-	public Drilling() {
+	public Drilling(Case pCase) {
 		c_humain = 10;
 		c_food = 0;
 		c_energy = 15;
@@ -16,6 +16,9 @@ public class Drilling : Building {
 		p_food = 0;
 		p_energy = 0; 
 		p_water = 60;
+
+		this.caseScript = pCase;
+
 	}
 
 

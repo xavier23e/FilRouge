@@ -32,6 +32,26 @@ public class Case : MonoBehaviour {
 		Debug.Log ("Item placé :" + itemPlaced);
 		// Changement du shader (transparent à diffusé)
 		//item.GetComponent<Renderer> ().material.shader = shader;
-	}
+
+
+		// Ajout dans le tableau du batiment
+		switch (item.name){
+			case "solar" :
+				Main.tabMapBuild.Add (new SolarPanel(this));
+				break;
+			case "drilling" :
+				Main.tabMapBuild.Add (new Drilling(this));
+				break;
+			case "windturbine" :
+				Main.tabMapBuild.Add (new WindTurbine(this));
+				break;
+			case "habitation" :
+				Main.tabMapBuild.Add (new Habitation(this));
+				break;
+			case "greenHouse" :
+				Main.tabMapBuild.Add (new Greenhouse(this));
+				break;
+			}
+		}
 
 }

@@ -6,7 +6,7 @@ public class Spaceship : Building {
 	private int buildingLevel = 1;
 
 	//Données Consommation / Production
-	public Spaceship() {
+	public Spaceship(Case pCase) {
 		c_humain = 0;
 		c_food = 10;
 		c_energy = 10;
@@ -16,6 +16,9 @@ public class Spaceship : Building {
 		p_food = 0;
 		p_energy = 40; 
 		p_water = 0;
+
+		this.caseScript = pCase;
+
 	}
 
 	// Use this for initialization

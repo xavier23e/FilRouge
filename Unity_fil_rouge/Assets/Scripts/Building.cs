@@ -16,6 +16,9 @@ public class Building {
 	protected int p_food ;
 	protected int p_energy ; 
 	protected int p_water ;
+	
+	//Case où se trouve le batiment
+	protected Case caseScript;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +30,11 @@ public class Building {
 	
 	}
 
-
 	// get_p = get le production de l'objet
 	// get_c = get la consommation de l'objet 
+
+	
+	public Case get_case(){ return this.caseScript; }
 
 	public int get_p_humain(){ return this.p_humain; }
 	public int get_p_food(){ return this.p_food; }

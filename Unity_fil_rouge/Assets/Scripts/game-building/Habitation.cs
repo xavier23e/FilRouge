@@ -6,7 +6,7 @@ public class Habitation : Building {
 	private int buildingLevel = 1;
 
 
-	public Habitation(){
+	public Habitation(Case pCase){
 		c_humain = 0;
 		c_food = 10;
 		c_energy = 5;
@@ -16,6 +16,9 @@ public class Habitation : Building {
 		p_food = 0;
 		p_energy = 0; 
 		p_water = 0;
+
+		this.caseScript = pCase;
+
 	}
 
 
