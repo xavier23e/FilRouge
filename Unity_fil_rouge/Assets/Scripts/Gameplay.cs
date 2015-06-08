@@ -21,8 +21,7 @@ public class Gameplay : MonoBehaviour {
 	//La barre des ressources
 
 	//Le Btn "passer" le tour
-
-
+	
 	//Mettre à jour le panneau des ressources
 	public void updateScreen() {
 		screenHumain.GetComponent<Text>().text = this.humain.ToString();
@@ -32,7 +31,7 @@ public class Gameplay : MonoBehaviour {
 	}
 
 	// Action pour chaque tour
-	public void pastTour () {
+	public void pastTour() {
 		this.tour++;
 		getAllBuildMap();
 		updateScreen();
@@ -47,7 +46,7 @@ public class Gameplay : MonoBehaviour {
 	}
 
 	// parcourir tous les batiments sur la map
-	public void getAllBuildMap () {
+	public void getAllBuildMap() {
 
 
 		foreach (Building item in Main.tabMapBuild)
@@ -61,7 +60,6 @@ public class Gameplay : MonoBehaviour {
 			this.food += item.get_c_food();
 			this.energy += item.get_c_energy();
 			this.humain += item.get_c_humain();
-
 		}
 	}
 
@@ -76,5 +74,4 @@ public class Gameplay : MonoBehaviour {
 		} 
 		return false;
 	}
-
 }
