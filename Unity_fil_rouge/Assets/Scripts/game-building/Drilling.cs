@@ -22,6 +22,7 @@ public class Drilling : Building {
 	}
 
 
+
 	// Use this for initialization
 	void Start () {
 	

@@ -9,7 +9,11 @@ public class CreateDrilling : MonoBehaviour {
 	public GameObject grilleDeJeu;
 
 	public void createDrilling(){
-		if (Gameplay.verifRessources (Drilling.get_c_water (), Drilling.get_c_food (), Drilling.get_c_energy (), Drilling.get_c_humain ())) {
+
+		Gameplay interfaceGameplay = new Gameplay ();
+		Building interfaceBuilding = new Building ();
+
+		if (interfaceGameplay.verifRessources (interfaceBuilding.get_c_water (), interfaceBuilding.get_c_food (), interfaceBuilding.get_c_energy (), interfaceBuilding.get_c_humain ())) {
 			drillingPut = (GameObject)Instantiate (modelDrilling, new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0), Quaternion.identity);
 			drillingPut.name = "drilling";
 			isCreated = true;
