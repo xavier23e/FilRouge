@@ -1,9 +1,0 @@
-fileFormatVersion: 2
-guid: 2714a162a935a8141825e38b9d0f6be4
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences:
-  - drilling: {fileID: 100038, guid: e86148452d9e3fe4caf0e099c2aa2c95, type: 3}
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 

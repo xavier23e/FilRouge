@@ -23,13 +23,13 @@ public class JourNuit : MonoBehaviour {
 		if (timer > 10 ) {
 			
 			if (timeDay == false){
-				print("jour");
+				//print("jour");
 				timeDay = true;
 			}
 			else
 			{
 				timeDay=false;
-				print("nuit");
+				//print("nuit");
 			}
 			timer = 0f;
 		}

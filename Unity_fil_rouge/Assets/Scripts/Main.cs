@@ -18,6 +18,10 @@ public class Main : MonoBehaviour {
 	// Nombre de case
 	private int nbCase;
 
+	//Pole de recherche
+	public GameObject modelPole;
+	private bool openPole = false;
+
 	// Game object vide qui regroupe toutes les cases
 	public GameObject gameGridObject;
 
@@ -53,7 +57,24 @@ public class Main : MonoBehaviour {
 					//Debug.Log("x = "+x+" z = "+z);
 				}
 				x++;
-			}			
+			}
+
+			//cacher le pôle de recherche
+			modelPole.gameObject.SetActive(false);
 	}
+
+	public void showResearchPole(){
+		if (openPole){
+			modelPole.gameObject.SetActive(false);
+			openPole=false;
+		}else{
+			modelPole.gameObject.SetActive(true);
+			openPole=true;
+		}
+	}
+
+
+
+
 
 }

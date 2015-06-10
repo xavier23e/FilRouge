@@ -5,8 +5,21 @@ public class Greenhouse : Building {
 	//Evolution batiment
 	private int buildingLevel = 1;
 
+
+	public Greenhouse() {
+		attributeValues();
+	}
+	
+	//Ressources object
+	public Greenhouse(Case pCase) {
+		attributeValues();
+		this.caseScript = pCase;
+		addBuilding();
+	}
+
+
 	//Données Consommation / Production
-	public Greenhouse(Case pCase){
+	public void attributeValues(){
 		c_humain = 5;
 		c_food = 0;
 		c_energy = 20;
@@ -16,16 +29,5 @@ public class Greenhouse : Building {
 		p_food = 60;
 		p_energy = 0; 
 		p_water = 0;
-		this.caseScript = pCase;
-
-	}
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

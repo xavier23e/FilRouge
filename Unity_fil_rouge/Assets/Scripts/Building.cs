@@ -19,17 +19,7 @@ public class Building {
 	
 	//Case où se trouve le batiment
 	protected Case caseScript;
-
-	// Use this for initialization
-	void Start () {
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	// get_p = get le production de l'objet
 	// get_c = get la consommation de l'objet 
 	
@@ -46,6 +36,6 @@ public class Building {
 	public int get_c_water(){ return this.c_water; }
 
 	public void addBuilding(){
-		Gameplay.calculConsommation(this.c_water, this.c_food, this.c_energy, this.c_humain);
+		Gameplay.calculConsommation(this.c_water, this.c_food, this.c_energy, this.c_humain, this.p_humain);
 	}
 }

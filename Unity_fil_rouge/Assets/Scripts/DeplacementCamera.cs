@@ -15,7 +15,7 @@ public class DeplacementCamera : MonoBehaviour {
 		Vector3 move = new Vector3();
 		
 		//On déplace vers la droite si on est proche du bout de l'écran droite
-		if (Input.mousePosition.x >= (Screen.width - 50)) {
+		if (Input.mousePosition.x >= (Screen.width - 10)) {
 			move.x += 0.05f;
 		}
 		//On déplace vers la gauche si on est proche du bout de l'écran gauche
@@ -23,7 +23,7 @@ public class DeplacementCamera : MonoBehaviour {
 			move.x -= 0.05f;
 		}
 		
-		if(Input.mousePosition.y >= (Screen.height - 50)){
+		if(Input.mousePosition.y >= (Screen.height - 10)){
 			move.z += 0.05f;
 			
 		}

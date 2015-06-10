@@ -5,8 +5,19 @@ public class WindTurbine : Building {
 	//Evolution batiment
 	private int buildingLevel = 1;
 
+	public WindTurbine() {
+		attributeValues();
+	}
+	
+	//Ressources object
+	public WindTurbine(Case pCase) {
+		attributeValues();
+		this.caseScript = pCase;
+		addBuilding();
+	}
+
 	//Données Consommation / Production
-	public WindTurbine(Case pCase) { 	
+	public void attributeValues() { 	
 		c_humain = 15;
 		c_food = 0;
 		c_energy = 0;
@@ -16,19 +27,5 @@ public class WindTurbine : Building {
 		p_food = 0;
 		p_energy = 40; 
 		p_water = 0;
-
-		this.caseScript = pCase;
-		addBuilding();
-
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

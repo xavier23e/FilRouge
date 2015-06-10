@@ -58,7 +58,7 @@ public class daynight : MonoBehaviour {
 			if (timeDay == false)
 			{
 				jourSky.SetColor("_Tint",Color.Lerp(Color.grey, Color.black, timerTint));
-				Debug.Log (timerTint);
+				//Debug.Log (timerTint);
 
 			}
 			else

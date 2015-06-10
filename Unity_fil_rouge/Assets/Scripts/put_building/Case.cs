@@ -29,7 +29,7 @@ public class Case : MonoBehaviour {
 
 	void OnMouseDown () {
 		itemPlaced = true;
-		Debug.Log ("Item placé :" + itemPlaced);
+		//Debug.Log ("Item placé :" + itemPlaced);
 		// Changement du shader (transparent à diffusé)
 		//item.GetComponent<Renderer> ().material.shader = shader;
 
@@ -52,6 +52,8 @@ public class Case : MonoBehaviour {
 				Main.tabMapBuild.Add (new Greenhouse(this));
 				break;
 			}
-		}
+		item.name = "" ;
+
+	}
 
 }

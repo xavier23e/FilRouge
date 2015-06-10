@@ -18,8 +18,6 @@ public class Gameplay : MonoBehaviour {
 	//Nombre de tour
 	private int tour = 0;
 
-	//La barre des ressources
-
 	//Le Btn "passer" le tour
 
 	void Awake (){
@@ -30,9 +28,9 @@ public class Gameplay : MonoBehaviour {
 		updateScreen();
 	}
 		
-	public static void calculConsommation (int pwater, int pfood, int penergy, int phumain ) {
-		Debug.Log("Humain :"+phumain);
+	public static void calculConsommation (int pwater, int pfood, int penergy, int phumain, int pchumain ) {
 		humain-= phumain;
+		humain-= pchumain;
 		food-= pfood;
 		energy-= penergy;
 		water-= pwater;
@@ -61,7 +59,6 @@ public class Gameplay : MonoBehaviour {
 		}
 	}
 
-
 	// parcourir tous les batiments sur la map
 	public void getAllBuildMap() {
 	
@@ -70,22 +67,22 @@ public class Gameplay : MonoBehaviour {
 			water += item.get_p_water();
 			food += item.get_p_food();
 			energy += item.get_p_energy();
-			humain += item.get_p_humain();
 
 			water -= item.get_c_water();
 			food -= item.get_c_food();
 			energy -= item.get_c_energy();
-			humain -= item.get_c_humain();
 		}
 	}
 
 	// Vérifier les ressouces pour poser un batiment
 	public bool verifRessources(int res_water, int res_food, int res_energy,int res_humain){
-		
+
+
 		if (res_water <= water 
 		    && res_food <= food
 		    && res_energy <= energy
 		    && res_humain <= humain) {
+			Debug.Log ("Humain : "+res_humain) ;
 			return true;
 		} 
 		return false;

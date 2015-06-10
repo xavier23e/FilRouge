@@ -5,8 +5,20 @@ public class Spaceship : Building {
 	//Evolution batiment
 	private int buildingLevel = 1;
 
-	//Données Consommation / Production
+	public Spaceship() {
+		attributeValues();
+	}
+	
+	//Ressources object
 	public Spaceship(Case pCase) {
+		attributeValues();
+		this.caseScript = pCase;
+		addBuilding();
+	}
+
+
+	//Données Consommation / Production
+	public void attributeValues() {
 		c_humain = 0;
 		c_food = 10;
 		c_energy = 10;
@@ -16,19 +28,5 @@ public class Spaceship : Building {
 		p_food = 0;
 		p_energy = 40; 
 		p_water = 0;
-
-		this.caseScript = pCase;
-		addBuilding();
-
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

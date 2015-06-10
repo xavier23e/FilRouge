@@ -5,7 +5,18 @@ public class SolarPanel : Building {
 	//Evolution batiment
 	private int buildingLevel = 1;
 
+	public SolarPanel() {
+		attributeValues();
+	}
+	
+	//Ressources object
 	public SolarPanel(Case pCase) {
+		attributeValues();
+		this.caseScript = pCase;
+		addBuilding();
+	}
+
+	public void attributeValues() {
 		c_humain = 10;
 		c_food = 0;
 		c_energy = 0;
@@ -15,21 +26,5 @@ public class SolarPanel : Building {
 		p_food = 0;
 		p_energy = 30; 
 		p_water = 0;
-
-		this.caseScript = pCase;
-		addBuilding();
-	}
-	//Données Consommation / Production
-		
-
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
