@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Gameplay : MonoBehaviour {
 
 	//Ressources jeu
-	protected int humain = 0;
+	protected int humain = 10;
 	protected int food = 60;
 	protected int energy = 200;
 	protected int water = 30;
@@ -21,7 +21,22 @@ public class Gameplay : MonoBehaviour {
 	//La barre des ressources
 
 	//Le Btn "passer" le tour
-	
+
+	void Awake (){
+		updateScreen();
+	}
+
+	public static void accesCal (int humain, int food, int energy, int water){
+		calculConsommation (humain, food, energy, water);
+	}
+
+	public void calculConsommation (int humain, int food, int energy, int water ) {
+		this.humain-= humain;
+		this.food-= food;
+		this.energy-= energy;
+		this.water-= water;
+	}
+
 	//Mettre à jour le panneau des ressources
 	public void updateScreen() {
 		screenHumain.GetComponent<Text>().text = this.humain.ToString();
@@ -45,10 +60,10 @@ public class Gameplay : MonoBehaviour {
 		}
 	}
 
+
 	// parcourir tous les batiments sur la map
 	public void getAllBuildMap() {
-
-
+	
 		foreach (Building item in Main.tabMapBuild)
 		{
 			this.water += item.get_p_water();
@@ -56,12 +71,14 @@ public class Gameplay : MonoBehaviour {
 			this.energy += item.get_p_energy();
 			this.humain += item.get_p_humain();
 
-			this.water += item.get_c_water();
-			this.food += item.get_c_food();
-			this.energy += item.get_c_energy();
-			this.humain += item.get_c_humain();
+			this.water -= item.get_c_water();
+			this.food -= item.get_c_food();
+			this.energy -= item.get_c_energy();
+			this.humain -= item.get_c_humain();
 		}
 	}
+	
+
 
 	// Vérifier les ressouces pour poser un batiment
 	public bool verifRessources(int res_water, int res_food, int res_energy,int res_humain){

@@ -8,21 +8,22 @@ public class Drilling : Building {
 	//Ressources object
 	public Drilling(Case pCase) {
 		c_humain = 10;
+		//c_humain = 0;
 		c_food = 0;
 		c_energy = 15;
+		//c_energy = 0;
 		c_water = 0;
 
 		p_humain = 0; 
 		p_food = 0;
-		p_energy = 0; 
+		//p_energy = 0; 
 		p_water = 60;
+		p_water = 0;
 
 		this.caseScript = pCase;
 
 	}
-
-
-
+	
 	// Use this for initialization
 	void Start () {
 	

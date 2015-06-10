@@ -32,7 +32,6 @@ public class Building {
 
 	// get_p = get le production de l'objet
 	// get_c = get la consommation de l'objet 
-
 	
 	public Case get_case(){ return this.caseScript; }
 
@@ -45,4 +44,8 @@ public class Building {
 	public int get_c_food(){ return this.c_food; }
 	public int get_c_energy(){ return this.c_energy; }
 	public int get_c_water(){ return this.c_water; }
+
+	public void addBuilding(){
+		Gameplay.accesCal(this.c_water, this.c_food, this.c_energy, this.c_humain);
+	}
 }

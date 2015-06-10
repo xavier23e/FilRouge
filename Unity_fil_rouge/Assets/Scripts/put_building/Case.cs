@@ -38,7 +38,7 @@ public class Case : MonoBehaviour {
 		switch (item.name){
 			case "solar" :
 				Main.tabMapBuild.Add (new SolarPanel(this));
-				
+				Gameplay.liveUpdate(item.name);
 				break;
 			case "drilling" :
 				Main.tabMapBuild.Add (new Drilling(this));
@@ -52,9 +52,7 @@ public class Case : MonoBehaviour {
 			case "greenHouse" :
 				Main.tabMapBuild.Add (new Greenhouse(this));
 				break;
-
 			}
-
 		}
 
 }
