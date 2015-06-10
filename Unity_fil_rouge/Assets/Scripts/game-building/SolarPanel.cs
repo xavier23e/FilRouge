@@ -15,7 +15,9 @@ public class SolarPanel : Building {
 		p_food = 0;
 		p_energy = 30; 
 		p_water = 0;
+
 		this.caseScript = pCase;
+		addBuilding();
 	}
 	//Données Consommation / Production
 		

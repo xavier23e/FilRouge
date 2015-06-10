@@ -21,6 +21,7 @@ public class Drilling : Building {
 		p_water = 0;
 
 		this.caseScript = pCase;
+		addBuilding();
 
 	}
 	

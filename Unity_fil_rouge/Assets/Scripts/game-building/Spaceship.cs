@@ -18,6 +18,7 @@ public class Spaceship : Building {
 		p_water = 0;
 
 		this.caseScript = pCase;
+		addBuilding();
 
 	}
 

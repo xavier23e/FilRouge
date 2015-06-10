@@ -18,6 +18,7 @@ public class WindTurbine : Building {
 		p_water = 0;
 
 		this.caseScript = pCase;
+		addBuilding();
 
 	}
 

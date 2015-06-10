@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class Gameplay : MonoBehaviour {
 
 	//Ressources jeu
-	protected int humain = 10;
-	protected int food = 60;
-	protected int energy = 200;
-	protected int water = 30;
+	protected static int humain = 10;
+	protected static int food = 60;
+	protected static int energy = 200;
+	protected static int water = 30;
 
 	public GameObject screenHumain;
 	public GameObject screenFood;
@@ -26,23 +26,24 @@ public class Gameplay : MonoBehaviour {
 		updateScreen();
 	}
 
-	public static void accesCal (int humain, int food, int energy, int water){
-		calculConsommation (humain, food, energy, water);
+	void Update() {
+		updateScreen();
 	}
-
-	public void calculConsommation (int humain, int food, int energy, int water ) {
-		this.humain-= humain;
-		this.food-= food;
-		this.energy-= energy;
-		this.water-= water;
+		
+	public static void calculConsommation (int pwater, int pfood, int penergy, int phumain ) {
+		Debug.Log("Humain :"+phumain);
+		humain-= phumain;
+		food-= pfood;
+		energy-= penergy;
+		water-= pwater;
 	}
 
 	//Mettre à jour le panneau des ressources
 	public void updateScreen() {
-		screenHumain.GetComponent<Text>().text = this.humain.ToString();
-		screenFood.GetComponent<Text>().text = this.food.ToString();
-		screenEnergy.GetComponent<Text>().text = this.energy.ToString();
-		screenWater.GetComponent<Text>().text = this.water.ToString();
+		screenHumain.GetComponent<Text>().text = humain.ToString();
+		screenFood.GetComponent<Text>().text = food.ToString();
+		screenEnergy.GetComponent<Text>().text = energy.ToString();
+		screenWater.GetComponent<Text>().text = water.ToString();
 	}
 
 	// Action pour chaque tour
@@ -55,7 +56,7 @@ public class Gameplay : MonoBehaviour {
 
 	//Vérifier si nous avons perdu
 	public void verifLooseGame() {
-		if (this.water <= 0 || this.food <= 0 || this.energy <= 0 || this.humain <= 0) {
+		if (water <= 0 || food <= 0 || energy <= 0 || humain <= 0) {
 			Debug.Log("you loose");
 		}
 	}
@@ -66,27 +67,25 @@ public class Gameplay : MonoBehaviour {
 	
 		foreach (Building item in Main.tabMapBuild)
 		{
-			this.water += item.get_p_water();
-			this.food += item.get_p_food();
-			this.energy += item.get_p_energy();
-			this.humain += item.get_p_humain();
+			water += item.get_p_water();
+			food += item.get_p_food();
+			energy += item.get_p_energy();
+			humain += item.get_p_humain();
 
-			this.water -= item.get_c_water();
-			this.food -= item.get_c_food();
-			this.energy -= item.get_c_energy();
-			this.humain -= item.get_c_humain();
+			water -= item.get_c_water();
+			food -= item.get_c_food();
+			energy -= item.get_c_energy();
+			humain -= item.get_c_humain();
 		}
 	}
-	
-
 
 	// Vérifier les ressouces pour poser un batiment
 	public bool verifRessources(int res_water, int res_food, int res_energy,int res_humain){
 		
-		if (res_water <= this.water 
-		    && res_food <= this.food
-		    && res_energy <= this.energy
-		    && res_humain <= this.humain) {
+		if (res_water <= water 
+		    && res_food <= food
+		    && res_energy <= energy
+		    && res_humain <= humain) {
 			return true;
 		} 
 		return false;

@@ -46,6 +46,6 @@ public class Building {
 	public int get_c_water(){ return this.c_water; }
 
 	public void addBuilding(){
-		Gameplay.accesCal(this.c_water, this.c_food, this.c_energy, this.c_humain);
+		Gameplay.calculConsommation(this.c_water, this.c_food, this.c_energy, this.c_humain);
 	}
 }
