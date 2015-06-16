@@ -14,14 +14,29 @@ public class Gameplay : MonoBehaviour {
 	public GameObject screenFood;
 	public GameObject screenEnergy;
 	public GameObject screenWater;
-	
+
+	//Panel du tutoriel
+	public GameObject panelTuto;
+	public GameObject textTuto;
+	public static string[] tableauTxtTuto = {
+		"Waouh! Quel atterrissage! \r\n" +
+		"Cette planète semble viable, nous devons nous\r\nprocurer des ressources pour survivre.\r\n" +
+		"Nos pilotes sont assoiffés, construis une foreuse! ",
+		"Parfait! Il manque d'habitants maintenant!\r\nHate toi de construire une habitation!",
+		"Nos habitants sont désormais affamés!\r\nNourris les en construisant une serre!", 
+		"Tu as besoin d'energie solaire!\r\nCombine la construction de plusieurs batiments!\r\nInstalle une habitation et un panneau solaire!", 
+		"Tu te débrouilles super bien!\r\nRegarde dans le menu pour voir ce qu'il te manque!\r\n!", 
+		"Félicitations tu es désormais pret!\r\nEssaye de survivre le plus longtemps possible!" };
+
+
 	//Nombre de tour
-	private int tour = 0;
+	public int tour = 0;
 
 	//Le Btn "passer" le tour
 
 	void Awake (){
 		updateScreen();
+		afficherTxtTuto ();
 	}
 
 	void Update() {
@@ -52,6 +67,13 @@ public class Gameplay : MonoBehaviour {
 		getAllBuildMap();
 		updateScreen();
 		verifLooseGame();
+		if (tour < 6) {
+			Debug.Log ("ici");
+			afficherFenetre ();
+			afficherTxtTuto ();
+		}
+
+
 	}
 
 	//Vérifier si nous avons perdu
@@ -86,5 +108,20 @@ public class Gameplay : MonoBehaviour {
 			return true;
 		} 
 		return false;
+	}
+
+	//Affiche le txt du tutoriel en fonction du nombre de tout
+	public void afficherTxtTuto(){
+		
+		textTuto.gameObject.GetComponent<Text>().text = tableauTxtTuto [tour];
+	}
+
+	// cache la fentre de tutoriel
+	public void cacherFenetre(){
+		panelTuto.SetActive (false);
+	}
+
+	public void afficherFenetre(){
+		panelTuto.SetActive (true);
 	}
 }
