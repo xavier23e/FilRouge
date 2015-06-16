@@ -30,10 +30,12 @@ public class Gameplay : MonoBehaviour {
 		
 	public static void calculConsommation (int pwater, int pfood, int penergy, int phumain, int pchumain ) {
 		humain-= phumain;
-		humain-= pchumain;
+		humain+= pchumain;
 		food-= pfood;
 		energy-= penergy;
 		water-= pwater;
+		//Debug.Log("pc : "+pchumain);
+		//Debug.Log("p : "+phumain);
 	}
 
 	//Mettre à jour le panneau des ressources
@@ -77,12 +79,10 @@ public class Gameplay : MonoBehaviour {
 	// Vérifier les ressouces pour poser un batiment
 	public bool verifRessources(int res_water, int res_food, int res_energy,int res_humain){
 
-
 		if (res_water <= water 
 		    && res_food <= food
 		    && res_energy <= energy
 		    && res_humain <= humain) {
-			Debug.Log ("Humain : "+res_humain) ;
 			return true;
 		} 
 		return false;

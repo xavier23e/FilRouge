@@ -20,7 +20,7 @@ public class Habitation : Building {
 		c_humain = 0;
 		c_food = 10;
 		c_energy = 5;
-		c_water = 10;
+		c_water = 0;
 		
 		p_humain = 10; 
 		p_food = 0;
