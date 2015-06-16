@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\put_building\Item.cs" />
      <Compile Include="Assets\Scripts\put_building\Texture.cs" />
      <Compile Include="Assets\Scripts\readxml.cs" />
+     <Compile Include="Assets\Scripts\tutorial\tutoriel.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\xml\question.xml" />
  <Reference Include="UnityEngine.UI">
